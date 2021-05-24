@@ -7,6 +7,10 @@ const app = express();
 
 app.use(express.static(__dirname));
 
+app.get("/", function (req, res) {
+    res.send("ok");
+});
+
 app.post("/upload/:id", function (req, res) {
 
     if (!fs.existsSync("books/")) {
